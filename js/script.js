@@ -38,6 +38,11 @@ var seg; //posicion siguiente
 var cantidad = []; //array que tiene todo lo que se ve en pantalla
 var i = 0; //acomulador para usar el array
 
+//local storage
+var beefore = document.getElementById("anteriores");
+var guardar = [];
+var k = 0;
+
 //Funciones
 
 function numero(a) { //mostrar los numeros en pantalla y guardarlos en variables
@@ -117,17 +122,25 @@ eq.addEventListener("click", function () {
         else{
             ans1.innerText = n1 / n2;
             division=false;
+            guardar[k] = (n1+"/"+n2+"="+(n1/n2));
+            k++;
         }
     }else if(suma == true){
         ans1.innerText = n1 + n2;
         suma=false;
+        guardar[k] = (n1+" + "+n2+" = "+(n1+n2));
+        k++;
     }else if(resta == true){
         ans1.innerText = n1 - n2;
         resta=false;
+        guardar[k] = (n1+" - "+n2+" = "+(n1-n2));
+        k++;
     }else if(multiplicacion == true){
         ans1.innerText = n1 * n2;
         multiplicacion=false;
-    }
+        guardar[k] = (n1+" x "+n2+" = "+(n1*n2));
+        k++;
+       }
 
 })
 
@@ -217,3 +230,26 @@ input_ct.addEventListener("click", function () {
     input_val = input_val.length;
     answ.innerHTML = input_val;
 })
+
+
+//local storage
+
+cleann = document.getElementById("vaciar");
+
+eq.addEventListener("click", function () {
+    localStorage.setItem("dato", guardar);
+    beefore.innerHTML = localStorage.getItem("dato");
+    
+
+});
+
+vaciar.addEventListener("click",function(){
+var option = confirm("¿Seguro que quiere eliminar los datos guardados?");
+if(option==true){
+k=0;
+guardar = []
+beefore.innerHTML = "";
+}
+
+})
+
