@@ -1,7 +1,8 @@
 // Numbers
 const botones = [...document.querySelectorAll(".num")];
 const numeros = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-const simbolos = ["+", "-", "/", "*"]
+const simbolos = ["+", "-", "/", "*"];
+
 const numBut = botones.filter(element => {
     if (numeros.includes(parseInt(element.value))) {
         return element;
@@ -38,12 +39,28 @@ var actualFunction = "";
 
 const pantallas = document.querySelectorAll(".scre");
 
+// Functions
+
+function vaciar() {
+    n1 = "0";
+    n2 = "0";
+    firstNumber = true;
+    position = "first";
+    pantallas[0].value = "";
+    pantallas[1].value = "0";
+    fullOperation = "";
+}
+
+function operar(a, b, operacion) {
+    return new Function('return (' + a + ") " + operacion + "(" + b + ")")();
+}
+
 // Events
 
 numBut.forEach(element => {
     element.addEventListener("click", () => {
         if (element.value == "." && n1.includes(".") || n2.includes(".")) {
-            console.log("puntito");
+            console.log("Ya hay un punto puesto");
         } else if (position == "first") {
             if (!firstNumber) {
                 n1 += element.value;
@@ -102,16 +119,6 @@ otros[2].addEventListener("click", () => {
     }
 })
 
-function vaciar() {
-    n1 = "0";
-    n2 = "0";
-    firstNumber = true;
-    position = "first";
-    pantallas[0].value = "";
-    pantallas[1].value = "0";
-    fullOperation = "";
-}
-
 otros[1].addEventListener("click", () => { //Delete one
     if (position == "first") {
         if (n1.length <= 2) {
@@ -147,10 +154,6 @@ otros[1].addEventListener("click", () => { //Delete one
 otros[0].addEventListener("click", () => { //Delete everything
     vaciar();
 });
-
-function operar(a, b, operacion) {
-    return new Function('return (' + a + ") " + operacion + "(" + b + ")")();
-}
 
 otros[4].addEventListener("click", () => { // Results
     if (n2 != "0") {
