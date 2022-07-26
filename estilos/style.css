@@ -1,93 +1,99 @@
-body{
-    background-color: black;
-}
-.main {
-    display: flex;
-    border: 2px white;
-    align-items: center;
-    
+* {
+    font-size: 2vw;
+    font-family: sans-serif;
+    margin: 0;
 }
 
-.item {
-    width: 100%;
-    height: 1000px;
+body {
+    background-color: black;
+}
+
+#flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.main {
+    width: 27%;
     text-align: center;
-    font-size: 30px;
     color: white;
     background-color: rgb(20, 20, 20);
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    margin-right: 5px;
-    border-radius: 25px;
+    border-radius: 15px;
+    padding: 20px;
 }
 
 .scre {
-    margin-top: 20px;
-    width: 90%;
-    border-radius: 25px;
+    width: 98%;
+    border-radius: 15px 15px 0 0;
     height: 115px;
     text-align: right;
-    padding-right: 15px;
-    font-size: 60px;
     background-color: rgb(53, 53, 53);
-    color: greenyellow;
+    color: rgb(72, 100, 29);
     font-weight: bold;
-    border: 2px greenyellow;
+    border: none;
+    padding: 0 10px;
 }
 
-#dn{
-    font-size: 30px;
+#pantallas {
+    margin: .5vw 0;
 }
-#ig{
-    background-color: rgb(43, 68, 4);
 
+.show {
+    border-radius: 0 0 25px 25px;
+    background-color: rgb(35, 35, 35);
+    color: rgb(110, 177, 10);
 }
-.num{
+
+.result {
+    color: rgb(204, 255, 128);
+}
+
+.num {
     width: 115px;
     height: 115px;
-    margin-bottom: 2%;
+    margin-bottom: .5vw;
     border-radius: 15px;
     background-color: rgb(24, 24, 24);
-    font-size: 60px;
-    color: greenyellow;
+    color: rgb(110, 177, 10);
     font-weight: bold;
-    border: 2px greenyellow;
-    
+    border: none;
+    cursor: pointer;
+    transition: background .2s ease;
 }
 
-.func{
+.num:hover {
+    background-color: rgb(34, 47, 31);
+}
+
+.func {
     background-color: rgb(19, 22, 19);
-    color: greenyellow;
+    color: rgb(116, 149, 68);
 }
 
-.act2{
+.func:hover {
+    background-color: rgb(21, 41, 16);
+}
+
+#eq {
+    width: 230px;
+}
+
+.act2 {
     width: 90%;
     height: 115px;
     margin-bottom: 2%;
     margin-top: 10px;
     border-radius: 15px;
     background-color: rgb(24, 24, 24);
-    font-size: 40px;
     color: greenyellow;
     font-weight: bold;
     border: 2px greenyellow;
 
 }
-h4{
-    width: 90%;
-    border-radius: 25px;
-    height: 100px;
-    margin-top: 7px;
-    margin-left: 25px;
-    text-align: right;
-    padding-top: 15px;
-    padding-right: 15px;
-    font-size: 60px;
-    background-color: rgb(34, 33, 33);
-    color: rgb(204, 255, 128);
-    font-weight: bold;
-    border: 2px greenyellow;
-}
-h1{
+
+h1 {
     padding-top: 30px;
     color: goldenrod;
 }
