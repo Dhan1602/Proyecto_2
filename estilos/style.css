@@ -5,7 +5,10 @@
 }
 
 body {
-    background-color: black;
+    background-color: #000000;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 1000'%3E%3Cg %3E%3Ccircle fill='%23000000' cx='50' cy='0' r='50'/%3E%3Cg fill='%23010200' %3E%3Ccircle cx='0' cy='50' r='50'/%3E%3Ccircle cx='100' cy='50' r='50'/%3E%3C/g%3E%3Ccircle fill='%23030400' cx='50' cy='100' r='50'/%3E%3Cg fill='%23040600' %3E%3Ccircle cx='0' cy='150' r='50'/%3E%3Ccircle cx='100' cy='150' r='50'/%3E%3C/g%3E%3Ccircle fill='%23050800' cx='50' cy='200' r='50'/%3E%3Cg fill='%23060a01' %3E%3Ccircle cx='0' cy='250' r='50'/%3E%3Ccircle cx='100' cy='250' r='50'/%3E%3C/g%3E%3Ccircle fill='%23080c01' cx='50' cy='300' r='50'/%3E%3Cg fill='%23090e01' %3E%3Ccircle cx='0' cy='350' r='50'/%3E%3Ccircle cx='100' cy='350' r='50'/%3E%3C/g%3E%3Ccircle fill='%230a1001' cx='50' cy='400' r='50'/%3E%3Cg fill='%230b1201' %3E%3Ccircle cx='0' cy='450' r='50'/%3E%3Ccircle cx='100' cy='450' r='50'/%3E%3C/g%3E%3Ccircle fill='%230d1501' cx='50' cy='500' r='50'/%3E%3Cg fill='%230e1701' %3E%3Ccircle cx='0' cy='550' r='50'/%3E%3Ccircle cx='100' cy='550' r='50'/%3E%3C/g%3E%3Ccircle fill='%230f1901' cx='50' cy='600' r='50'/%3E%3Cg fill='%23101b01' %3E%3Ccircle cx='0' cy='650' r='50'/%3E%3Ccircle cx='100' cy='650' r='50'/%3E%3C/g%3E%3Ccircle fill='%23121d01' cx='50' cy='700' r='50'/%3E%3Cg fill='%23131f02' %3E%3Ccircle cx='0' cy='750' r='50'/%3E%3Ccircle cx='100' cy='750' r='50'/%3E%3C/g%3E%3Ccircle fill='%23142102' cx='50' cy='800' r='50'/%3E%3Cg fill='%23152302' %3E%3Ccircle cx='0' cy='850' r='50'/%3E%3Ccircle cx='100' cy='850' r='50'/%3E%3C/g%3E%3Ccircle fill='%23172502' cx='50' cy='900' r='50'/%3E%3Cg fill='%23182702' %3E%3Ccircle cx='0' cy='950' r='50'/%3E%3Ccircle cx='100' cy='950' r='50'/%3E%3C/g%3E%3Ccircle fill='%23192902' cx='50' cy='1000' r='50'/%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: contain;
 }
 
 #flex {
@@ -20,13 +23,14 @@ body {
     text-align: center;
     color: white;
     background-color: rgb(20, 20, 20);
-    border-radius: 15px;
+    border-radius: 28px;
     padding: 20px;
+    filter: drop-shadow(0px 4px 4px rgba(255, 255, 255, 0.105));
 }
 
 .scre {
     width: 98%;
-    border-radius: 15px 15px 0 0;
+    border-radius: 20px 20px 0 0;
     height: 115px;
     text-align: right;
     background-color: rgb(53, 53, 53);
@@ -77,7 +81,7 @@ body {
 }
 
 #eq {
-    width: 230px;
+    width: 236px;
 }
 
 .act2 {

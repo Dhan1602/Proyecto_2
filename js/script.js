@@ -70,7 +70,7 @@ operadores.forEach(element => {
             position = "second";
             pantallas[1].value = n2;
             firstNumber = true;
-            fullOperation = n1 + element.value;
+            fullOperation = n1 + " " + element.value;
             pantallas[0].value = fullOperation;
             actualFunction = element.value;
         } else {
@@ -79,7 +79,7 @@ operadores.forEach(element => {
                     pantallas[1].value = "No se puede dividir entre 0";
                     setTimeout(() => pantallas[1].value = n2, 1500);
                 } else {
-                    fullOperation += n2 + " = " + operar(n1, n2, actualFunction) + element.value + " ";
+                    fullOperation += " " + n2 + " = " + operar(n1, n2, actualFunction) + " " + element.value + " ";
                     pantallas[0].value = fullOperation;
                     pantallas[1].value = "0";
                     n1 = operar(n1, n2, actualFunction);
@@ -160,7 +160,7 @@ otros[4].addEventListener("click", () => { // Results
         } else {
             pantallas[0].value = "";
             pantallas[1].value = operar(n1, n2, actualFunction);
-            fullOperation += n2 + " = " + operar(n1, n2, actualFunction);
+            fullOperation += + n2 + " = " + operar(n1, n2, actualFunction) + " ";
             n1 = (operar(n1, n2, actualFunction)).toString();
             n2 = "";
             position = "first";
