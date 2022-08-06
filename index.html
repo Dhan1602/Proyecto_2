@@ -9,31 +9,57 @@
   </head>
   <body>
     <div id="flex">
+      <!-- Black rectangle in which there is the content -->
       <div class="main">
-        <div id="pantallas">
-          <input type="text" class="scre" id="screen" disabled />
-          <input type="text" value="0" class="scre show" id="resp1" disabled />
+        <div id="calculadoraa">
+          <div id="pantallas">
+            <input type="text" class="scre" id="screen" disabled />
+            <input
+              type="text"
+              value="0"
+              class="scre show"
+              id="resp1"
+              disabled
+            />
+          </div>
+          <div id="divBotones">
+            <button class="num func" value="AC">AC</button>
+            <button class="num func" value="DEL">DEL</button>
+            <button class="num func" value="%">%</button>
+            <button class="num func" value="/">/</button><br />
+            <button class="num" value="7">7</button>
+            <button class="num" value="8">8</button>
+            <button class="num" value="9">9</button>
+            <button class="num func" value="*">*</button><br />
+            <button class="num" value="4">4</button>
+            <button class="num" value="5">5</button>
+            <button class="num" value="6">6</button>
+            <button class="num func" value="-">-</button><br />
+            <button class="num" value="1">1</button>
+            <button class="num" value="2">2</button>
+            <button class="num" value="3">3</button>
+            <button class="num func" value="+">+</button><br />
+            <button class="num" value=".">.</button>
+            <button class="num" value="0">0</button>
+            <button class="num func" value="=" id="eq">=</button><br />
+          </div>
         </div>
-        <div id="divBotones">
-          <button class="num func" value="AC">AC</button>
-          <button class="num func" value="DEL">DEL</button>
-          <button class="num func" value="%">%</button>
-          <button class="num func" value="/">/</button><br />
-          <button class="num" value="7">7</button>
-          <button class="num" value="8">8</button>
-          <button class="num" value="9">9</button>
-          <button class="num func" value="*">*</button><br />
-          <button class="num" value="4">4</button>
-          <button class="num" value="5">5</button>
-          <button class="num" value="6">6</button>
-          <button class="num func" value="-">-</button><br />
-          <button class="num" value="1">1</button>
-          <button class="num" value="2">2</button>
-          <button class="num" value="3">3</button>
-          <button class="num func" value="+">+</button><br />
-          <button class="num" value=".">.</button>
-          <button class="num" value="0">0</button>
-          <button class="num func" value="=" id="eq">=</button><br />
+
+        <div id="conversor">
+          <div id="pantallas">
+            <input
+              type="text"
+              class="scre"
+              id="write"
+              placeholder="Write something..."
+            />
+            <input type="text" value="0" class="scre show" id="read" disabled />
+          </div>
+          <div id="divBotones">
+            <button class="num func" value="upper">AC</button>
+            <button class="num func" value="lower">DEL</button>
+            <button class="num func" value="%">%</button>
+          </div>
         </div>
       </div>
     </div>
