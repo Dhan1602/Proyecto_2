@@ -11,6 +11,36 @@ body {
     background-size: contain;
 }
 
+/* Nav */
+#navBar {
+    background-color: #000000;
+    max-width: 100%;
+    border-bottom: 2.6px solid rgb(32, 111, 32);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#navBar button {
+    padding: 6px;
+    width: 4vw;
+    background: none;
+    border: none;
+    color: rgb(72, 115, 8);
+    transition: color .2s ease;
+    cursor: pointer;
+}
+
+.nav-active {
+    color: rgb(113, 164, 36) !important;
+    border-bottom: 3px solid !important;
+}
+
+#navBar button:hover {
+    color: rgb(86, 133, 16);
+    border-bottom: 2px solid;
+}
+
 #flex {
     display: flex;
     align-items: center;
@@ -20,6 +50,7 @@ body {
 
 .main {
     width: 27%;
+    min-height: 76vh;
     text-align: center;
     color: white;
     background-color: rgb(0, 0, 0);
@@ -54,7 +85,7 @@ body {
     color: rgb(204, 255, 128);
 }
 
-.num {
+.num, .wrte {
     width: 115px;
     height: 115px;
     margin-bottom: .5vw;
@@ -65,6 +96,15 @@ body {
     border: none;
     cursor: pointer;
     transition: background .2s ease;
+}
+
+.wrte {
+    width: 460px;
+}
+
+#write, #read {
+    text-align: left;
+    color: rgb(116, 149, 68);
 }
 
 .num:hover {
@@ -102,9 +142,25 @@ body {
 
 }
 
-h1 {
-    padding-top: 30px;
-    color: goldenrod;
+#conversor, #historial {
+    display: none;
+}
+
+#historial {
+    overflow: auto;
+    color: rgb(141, 196, 59);
+    flex-direction: column;
+}
+
+#historial button {
+    width: 7vw;
+    height: 3vw;
+    font-size: 1.5vw;
+    display: none;
+}
+
+#divHistorial {
+    color: rgb(68, 113, 0);
 }
 
 /* Animaciones: */

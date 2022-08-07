@@ -1,3 +1,34 @@
+// Nav
+var ventanaActual = "calculadoraa";
+var ventanas = [...document.querySelectorAll(".window")];
+
+const navegar = [...document.querySelectorAll(".navigate")];
+
+navegar.forEach((e) => {
+    e.addEventListener("click", () => {
+        if (!e.classList.contains("nav-active")) {
+            // Add class
+            navegar.forEach(f => {
+                f.classList.remove("nav-active");
+            });
+            e.classList.add("nav-active");
+
+            // Change "window"
+            ventanas.forEach(w => {
+                if (w.getAttribute("id") == ventanaActual) {
+                    w.style.display = "none";
+                }
+                if (e.value == w.getAttribute("id")) {
+                    w.style.display = "block";
+                }
+            });
+            ventanaActual = e.value;
+        }
+
+    })
+})
+
+
 // Numbers
 const botones = [...document.querySelectorAll(".num")];
 const numeros = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -167,6 +198,62 @@ otros[4].addEventListener("click", () => { // Results
             n1 = (operar(n1, n2, actualFunction)).toString();
             n2 = "";
             position = "first";
+            storageFunction(fullOperation); //Local storage function
         };
     }
-})
+});
+
+// Conversor
+
+const conversorScreens = document.querySelectorAll(".conversores");
+const conversorButtons = document.querySelectorAll(".wrte");
+
+conversorButtons[0].addEventListener("click", () => {
+    conversorScreens[1].value = conversorScreens[0].value.toUpperCase();
+});
+conversorButtons[1].addEventListener("click", () => {
+    conversorScreens[1].value = conversorScreens[0].value.toLowerCase();
+});
+conversorButtons[2].addEventListener("click", () => {
+    conversorScreens[1].value = conversorScreens[0].value.length;
+});
+
+// Local storage
+
+const historialContent = document.querySelector("#divHistorial");
+const botonEliminar = document.querySelector("#cleanStorage");
+
+updateHistorial();
+
+function updateHistorial() {
+    if (localStorage.proceso) {
+        botonEliminar.style.display = "block";
+        const firstStorage = JSON.parse(localStorage.getItem("proceso"));
+        var firstHistorial = "<ul>";
+        for (let i = 0; i < firstStorage.length; i++) {
+            firstHistorial += "<li>" + firstStorage[i] + "</li>";
+        };
+        historialContent.innerHTML = firstHistorial + "</ul>";
+    } else historialContent.innerHTML = "<h4>Aún no hay nada en el historial</h4>"
+}
+
+
+function storageFunction(process) {
+    if (localStorage.getItem("proceso")) {
+        var actualStorage = JSON.parse(localStorage.getItem("proceso"));
+        actualStorage.push(process);
+        localStorage.setItem("proceso", JSON.stringify(actualStorage));
+        updateHistorial();
+    } else {
+        var actualStorage = [process];
+        localStorage.setItem("proceso", JSON.stringify(actualStorage));
+        updateHistorial();
+    }
+}
+
+botonEliminar.addEventListener("click", () => {
+    var option = confirm("¿Seguro que deseas eliminar el historial?");
+    if (option) localStorage.removeItem("proceso");
+    updateHistorial();
+    botonEliminar.style.display = "none";
+});

@@ -6,12 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Proyecto 2</title>
     <link rel="stylesheet" href="./estilos/style.css" />
+    <script
+      src="https://kit.fontawesome.com/22b19253e6.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
+    <nav id="navBar">
+      <button class="navigate nav-active" value="calculadoraa">
+        <i class="fa-solid fa-calculator"></i>
+      </button>
+      <button class="navigate" value="conversor">
+        <i class="fa-solid fa-keyboard"></i>
+      </button>
+      <button class="navigate" value="historial">
+        <i class="fa-solid fa-clock-rotate-left"></i>
+      </button>
+    </nav>
     <div id="flex">
       <!-- Black rectangle in which there is the content -->
       <div class="main">
-        <div id="calculadoraa">
+        <div id="calculadoraa" class="window">
           <div id="pantallas">
             <input type="text" class="scre" id="screen" disabled />
             <input
@@ -45,21 +60,34 @@
           </div>
         </div>
 
-        <div id="conversor">
+        <div id="conversor" class="window">
           <div id="pantallas">
             <input
               type="text"
-              class="scre"
+              class="scre conversores"
               id="write"
               placeholder="Write something..."
             />
-            <input type="text" value="0" class="scre show" id="read" disabled />
+            <input
+              type="text"
+              class="scre show conversores"
+              id="read"
+              disabled
+            />
           </div>
-          <div id="divBotones">
-            <button class="num func" value="upper">AC</button>
-            <button class="num func" value="lower">DEL</button>
-            <button class="num func" value="%">%</button>
+          <div id="divConversores">
+            <button class="wrte func" value="upper">Upper case</button>
+            <button class="wrte func" value="lower">Lower case</button>
+            <button class="wrte func" value="count">Count characters</button>
           </div>
+        </div>
+
+        <div id="historial" class="window">
+          <h3>Historial</h3>
+          <div id="divHistorial">
+            <h4>Aún no hay nada en el historial</h4>
+          </div>
+          <button class="wrte func" id="cleanStorage">Clean</button>
         </div>
       </div>
     </div>
